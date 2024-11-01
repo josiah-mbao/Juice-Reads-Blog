@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'home');
 
 Route::view('dashboard', 'dashboard')
-    ->middleware(['auth', 'verified'])
+    //->middleware(['auth', 'verified'])
     ->name('dashboard');
 
 Route::view('profile', 'profile')

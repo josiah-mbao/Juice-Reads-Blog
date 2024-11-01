@@ -14,8 +14,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Add a custom stylesheet for your project -->
     <link href="{{ asset('css/blog.css') }}" rel="stylesheet">
-    
-    <link rel="stylesheet" href="{{ vite('resources/css/app.css') }}">
+    @vite('resources/css/app.css')
 
 
     <!-- Optionally, you can include a Google Font or other font -->

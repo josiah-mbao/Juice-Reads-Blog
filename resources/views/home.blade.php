@@ -1,36 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Blog</title>
-    @vite('resources/css/app.css')
-</head>
-<body class="bg-gray-100 text-gray-900">
-    <div class="container mx-auto">
-        <!-- Header -->
-        <header class="py-6">
-            <nav class="flex justify-between items-center">
-                <a href="/" class="text-xl font-bold text-indigo-600">My Blog</a>
-                <ul class="flex space-x-4">
-                    <li><a href="/" class="text-gray-600 hover:text-indigo-600">Home</a></li>
-                    <li><a href="/profile" class="text-gray-600 hover:text-indigo-600">Profile</a></li>
-                    <li><a href="/dashboard" class="text-gray-600 hover:text-indigo-600">Dashboard</a></li>
-                </ul>
-            </nav>
-        </header>
+@extends('app')
 
-        <!-- Main Content -->
-        <main>
-            @yield('content')
-        </main>
+@section('content')
+<div class="py-12">
+    <h1 class="text-3xl font-bold mb-6">Latest Blog Posts</h1>
 
-        <!-- Footer -->
-        <footer class="py-6 text-center text-gray-500">
-            &copy; 2024 My Blog. All rights reserved.
-        </footer>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Example blog post card -->
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-xl font-semibold mb-2">Blog Post Title</h2>
+            <p class="text-gray-700">A brief description of the blog post...</p>
+            <a href="#" class="text-indigo-600 mt-4 inline-block">Read More</a>
+        </div>
+        <!-- Add more posts here -->
     </div>
-
-    @vite('resources/js/app.js')
-</body>
-</html>
+</div>
+@endsection
