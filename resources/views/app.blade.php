@@ -14,10 +14,15 @@
                 <a href="/" class="text-xl font-bold text-indigo-600">Juice Reads</a>
                 <ul class="flex space-x-4">
                     <li><a href="/" class="text-gray-600 hover:text-indigo-600">Home</a></li>
-                    <li><a href="/profile" class="text-gray-600 hover:text-indigo-600">Profile</a></li>
-                    <li><a href="/dashboard" class="text-gray-600 hover:text-indigo-600">Dashboard</a></li>
+                    @auth
+                        <li><a href="/profile" class="text-gray-600 hover:text-indigo-600">Profile</a></li>
+                        <li><a href="/dashboard" class="text-gray-600 hover:text-indigo-600">Dashboard</a></li>
+                    @else
+                        <li><a href="{{ route('login') }}" class="text-gray-600 hover:text-indigo-600">Login</a></li>
+                        <li><a href="{{ route('register') }}" class="text-gray-600 hover:text-indigo-600">Register</a></li>
+                    @endauth
                 </ul>
-            </nav>
+            </nav>            
         </header>
 
         <!-- Main Content -->
