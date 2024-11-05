@@ -11,7 +11,7 @@
         <!-- Header -->
         <header class="py-6">
             <nav class="flex justify-between items-center">
-                <a href="/" class="text-xl font-bold text-indigo-600">My Blog</a>
+                <a href="/" class="text-xl font-bold text-indigo-600">Juice Reads</a>
                 <ul class="flex space-x-4">
                     <li><a href="/" class="text-gray-600 hover:text-indigo-600">Home</a></li>
                     <li><a href="/profile" class="text-gray-600 hover:text-indigo-600">Profile</a></li>
