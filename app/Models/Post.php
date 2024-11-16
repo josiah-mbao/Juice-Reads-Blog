@@ -1,16 +1,26 @@
 <?php
 
 namespace App\Models;
+
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
     protected $fillable = [
-        'title',
-        'content',
-        'author_id', // If you plan to support multiple authors in the future
-        'published_at', // To track when the post was published
-        'cover_image', // URL to an image of the book cover or related image
-        'category', // Optional: to categorize your posts
+        'title',        // Title of the book being reviewed
+        'content',      // The review text
+        'duration',     // Duration of how long it took to read the book
+        'user_id',      // The ID of the user who created the review
+        'published_at', // Optional: when the review was published
+        'cover_image',  // Optional: URL for the book cover or related image
+        'category',     // Optional: categorize your reviews (fiction, non-fiction, etc.)
     ];
+    
+    /**
+     * Define the relationship with the User model.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
