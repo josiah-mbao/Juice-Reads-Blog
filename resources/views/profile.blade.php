@@ -14,8 +14,16 @@
             <label class="block text-gray-700">Email</label>
             <input type="email" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" value="{{ auth()->user()->email }}" readonly>
         </div>
-        
-        <a href="{{ route('profile.edit') }}" class="text-blue-500 hover:underline">Edit Profile</a>
+
+        <a href="{{ route('profile') }}" class="text-blue-500 hover:underline">Edit Profile</a>
+
+        <div class="mt-6">
+            <!-- Logout Form -->
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="text-gray-600 hover:text-indigo-600">Sign out</button>
+            </form>
+        </div>
     </div>
 </div>
 @endsection
