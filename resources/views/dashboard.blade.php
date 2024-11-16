@@ -15,27 +15,43 @@
 
     <!-- Currently Reading Section -->
     <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
-        <h2 class="text-xl font-semibold mb-4">Currently Reading</h2>
-        <ul class="list-disc list-inside">
-            @foreach ($currentlyReading as $book)
-                <li>{{ $book }}</li>
-            @endforeach
-        </ul>
+        <h2 class="text-xl font-semibold mb-4">Your reviews</h2>
+        @if($currentlyReading->isEmpty())
+            <p>You are not currently reading any books. Add a new book to your reading list!</p>
+        @else
+            <ul class="list-disc list-inside">
+                @foreach ($currentlyReading as $book)
+                    <li>
+                        <strong>{{ $book->title }}</strong><br>
+                        <span class="text-gray-600">Duration: {{ $book->duration }} days</span><br>
+                        <p>{{ Str::limit($book->content, 100) }}</p>
+                    </li>
+                @endforeach
+            </ul>
+        @endif
     </div>
 
     <!-- Finished Books Section -->
-    <div class="bg-white p-6 rounded-lg shadow-lg">
+    <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
         <h2 class="text-xl font-semibold mb-4">Books You've Finished</h2>
-        <ul class="list-disc list-inside">
-            @foreach ($finishedBooks as $book)
-                <li><a href="{{ $book['review_url'] }}" class="text-indigo-600 hover:underline">{{ $book['title'] }}</a></li>
-            @endforeach
-        </ul>
+        @if($finishedBooks->isEmpty())
+            <p>You have not finished any books yet. Start reading and reviewing your books!</p>
+        @else
+            <ul class="list-disc list-inside">
+                @foreach ($finishedBooks as $book)
+                    <li>
+                        <strong>{{ $book->title }}</strong> - Published on {{ $book->published_at->format('M d, Y') }}<br>
+                        <p>{{ Str::limit($book->content, 100) }}</p>
+                        <a href="{{ route('posts.show', $book->id) }}" class="text-indigo-600 hover:underline">Read full review</a>
+                    </li>
+                @endforeach
+            </ul>
+        @endif
     </div>
 
     <!-- Add Book Button -->
     <div class="mt-6">
-        <a href="/add-book" class="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700">Add a Book</a>
+        <a href="{{ route('posts.create') }}" class="bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700">Add a Review</a>
     </div>
 </div>
 @endsection

@@ -15,16 +15,16 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'book_title' => 'required|string|max:255',
+            'title' => 'required|string|max:255',
             'duration' => 'required|string|max:255',
-            'review_text' => 'required|string',
+            'content' => 'required|string',
         ]);
 
         Post::create([
             'user_id' => Auth::id(),
-            'book_title' => $request->book_title,
+            'title' => $request->title,
             'duration' => $request->duration,
-            'review_text' => $request->review_text,
+            'content' => $request->content,
         ]);
 
         return redirect('/dashboard')->with('success', 'Post created successfully!');

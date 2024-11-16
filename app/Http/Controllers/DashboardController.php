@@ -2,30 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
     public function index()
     {
-        // For now, we'll use placeholder data. Later, this can be replaced with dynamic data from the database.
-        
-        // Placeholder data for books
-        $currentlyReading = [
-            'The Pragmatic Programmer',
-            'Clean Code',
-            'The Lean Startup'
-        ];
+        // Get the currently authenticated user
+        $user = Auth::user();
 
-        $finishedBooks = [
-            ['title' => 'Atomic Habits', 'review_url' => '/reviews/1'],
-            ['title' => 'Deep Work', 'review_url' => '/reviews/2'],
-            ['title' => 'The Subtle Art of Not Giving a F*ck', 'review_url' => '/reviews/3']
-        ];
+        // Fetch the user's posts from the database
+        $currentlyReading = Post::where('user_id', $user->id)->whereNull('published_at')->get(); // Posts that are not published yet
+        $finishedBooks = Post::where('user_id', $user->id)->whereNotNull('published_at')->get(); // Published posts
 
-        // Example goals or stats (placeholders)
+        // Example reading goal and books finished (you can replace with actual logic if needed)
         $readingGoal = 10; // User's reading goal
-        $booksFinished = 8; // Number of books they've finished this year
+        $booksFinished = $finishedBooks->count(); // Number of books they've finished
         $progress = ($booksFinished / $readingGoal) * 100; // Progress percentage
         
         return view('dashboard', compact('currentlyReading', 'finishedBooks', 'readingGoal', 'booksFinished', 'progress'));
