@@ -40,11 +40,28 @@ Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->na
 Route::post('/register', [RegisterController::class, 'register']);
 
 
-Route::middleware(['auth'])->group(function(){
+Route::middleware(['auth'])->group(function() {
+    // Display the form for creating a post
     Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+    
+    // Store a new post
     Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+    
+    // Show a single post
     Route::get('/posts/{id}', [PostController::class, 'show'])->name('posts.show');
+    
+    // Display the form for editing a post
+    Route::get('/posts/{id}/edit', [PostController::class, 'edit'])->name('posts.edit');
+    
+    // Update an existing post
+    Route::put('/posts/{id}', [PostController::class, 'update'])->name('posts.update');
+    
+    // Delete a post
+    Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
 });
+
+
+
 
 // Default Laravel authentication routes (if using built-in Auth)
 require __DIR__.'/auth.php';

@@ -12,6 +12,10 @@ class DashboardController extends Controller
         // Get the currently authenticated user
         $user = Auth::user();
 
+        if (!$user) {
+            return redirect()->route('login')->withErrors('You must be logged in to view the dashboard.');
+        }
+
         // Fetch the user's posts from the database
         $currentlyReading = Post::where('user_id', $user->id)->whereNull('published_at')->get(); // Posts that are not published yet
         $finishedBooks = Post::where('user_id', $user->id)->whereNotNull('published_at')->get(); // Published posts

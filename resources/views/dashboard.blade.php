@@ -15,16 +15,26 @@
 
     <!-- Currently Reading Section -->
     <div class="bg-white p-6 rounded-lg shadow-lg mb-6">
-        <h2 class="text-xl font-semibold mb-4">Your reviews</h2>
+        <h2 class="text-xl font-semibold mb-4">Your Reviews</h2>
         @if($currentlyReading->isEmpty())
             <p>You are not currently reading any books. Add a new book to your reading list!</p>
         @else
             <ul class="list-disc list-inside">
                 @foreach ($currentlyReading as $book)
-                    <li>
-                        <strong>{{ $book->title }}</strong><br>
-                        <span class="text-gray-600">Duration: {{ $book->duration }} days</span><br>
-                        <p>{{ Str::limit($book->content, 100) }}</p>
+                    <li class="flex justify-between items-center mb-4">
+                        <div>
+                            <strong>{{ $book->title }}</strong><br>
+                            <span class="text-gray-600">Duration: {{ $book->duration }} days</span><br>
+                            <p>{{ Str::limit($book->content, 100) }}</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <a href="{{ route('posts.edit', $book->id) }}" class="bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600">Edit</a>
+                            <form action="{{ route('posts.destroy', $book->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this book?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600">Delete</button>
+                            </form>
+                        </div>
                     </li>
                 @endforeach
             </ul>
@@ -39,10 +49,20 @@
         @else
             <ul class="list-disc list-inside">
                 @foreach ($finishedBooks as $book)
-                    <li>
-                        <strong>{{ $book->title }}</strong> - Published on {{ $book->published_at->format('M d, Y') }}<br>
-                        <p>{{ Str::limit($book->content, 100) }}</p>
-                        <a href="{{ route('posts.show', $book->id) }}" class="text-indigo-600 hover:underline">Read full review</a>
+                    <li class="flex justify-between items-center mb-4">
+                        <div>
+                            <strong>{{ $book->title }}</strong> - Published on {{ $book->published_at->format('M d, Y') }}<br>
+                            <p>{{ Str::limit($book->content, 100) }}</p>
+                            <a href="{{ route('posts.show', $book->id) }}" class="text-indigo-600 hover:underline">Read full review</a>
+                        </div>
+                        <div class="flex space-x-2">
+                            <a href="{{ route('posts.edit', $book->id) }}" class="bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-600">Edit</a>
+                            <form action="{{ route('posts.destroy', $book->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this book?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="bg-red-500 text-white py-1 px-3 rounded hover:bg-red-600">Delete</button>
+                            </form>
+                        </div>
                     </li>
                 @endforeach
             </ul>
@@ -55,3 +75,4 @@
     </div>
 </div>
 @endsection
+
