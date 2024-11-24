@@ -1,18 +1,24 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 
-# Book Report Blog
+# Juice Reads
 
-Welcome to the **Book Report Blog** project! This web application allows you to share your reading journey by posting reviews and insights on the books you read. It's built using Laravel and Tailwind CSS for a modern and responsive design.
+A platform where I write reviews on books I've read and document my reading journey.
 
 ## Table of Contents
 
+- [Introduction](#introduction)
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
+
+## Introduction
+
+In 2021, I read a book called Atomic Habits, by James Clear. It influenced me in my decision to start reading more. And so I did. I kept my reviews for the various books I have read in a Google document. I figured why not use my coding skills to build an application from it. I was curious what it would look like in a different format. This is the product of a habit I have built from it.
+
 
 ## Features
 
@@ -24,8 +30,8 @@ Welcome to the **Book Report Blog** project! This web application allows you to 
 
 ## Technologies Used
 
-- **Backend**: Laravel
-- **Frontend**: HTML, CSS, JavaScript, Tailwind CSS
+- **Backend**: PHP, Laravel
+- **Frontend**: Bootstrap, Tailwind CSS
 - **Database**: SQLite
 - **Build Tool**: Vite
 
@@ -36,5 +42,11 @@ To get started with the Book Report Blog, follow these steps:
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/yourusername/book-report-blog.git
-   cd book-report-blog
+   git clone https://github.com/josiah-mbao/Juice-Reads-blog.git
+   cd juice-reads
+   ```
+
+2. **Live Demo**:
+   [Access the live project here](http://127.0.0.1:8000/)
+
+
