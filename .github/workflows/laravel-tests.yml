@@ -1,0 +1,37 @@
+name: Laravel Simple CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout code from repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up PHP
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.1
+          extensions: mbstring, bcmath
+
+      # Step 3: Install dependencies
+      - name: Install Composer dependencies
+        run: composer install --no-progress --no-suggest
+
+      # Step 4: Set up environment
+      - name: Copy .env file
+        run: cp .env.example .env
+
+      # Step 5: Run Laravel tests
+      - name: Run tests
+        run: php artisan test
