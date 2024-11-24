@@ -1,7 +1,6 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
-
 # Juice Reads
+
+![Project Image](https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg")
 
 A platform where I write reviews on books I've read and document my reading journey.
 
@@ -11,14 +10,11 @@ A platform where I write reviews on books I've read and document my reading jour
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
 - [License](#license)
 
 ## Introduction
 
 In 2021, I read a book called Atomic Habits, by James Clear. It influenced me in my decision to start reading more. And so I did. I kept my reviews for the various books I have read in a Google document. I figured why not use my coding skills to build an application from it. I was curious what it would look like in a different format. This is the product of a habit I have built from it.
-
 
 ## Features
 
@@ -49,4 +45,18 @@ To get started with the Book Report Blog, follow these steps:
 2. **Live Demo**:
    [Access the live project here](http://127.0.0.1:8000/)
 
+## License
 
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+---
+
+MIT License
+
+Copyright (c) [Year] [Your Name]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
