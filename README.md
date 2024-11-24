@@ -1,7 +1,5 @@
 # Juice Reads
 
-![Project Image](https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg")
-
 A platform where I write reviews on books I've read and document my reading journey.
 
 ## Table of Contents
@@ -14,7 +12,7 @@ A platform where I write reviews on books I've read and document my reading jour
 
 ## Introduction
 
-In 2021, I read a book called Atomic Habits, by James Clear. It influenced me in my decision to start reading more. And so I did. I kept my reviews for the various books I have read in a Google document. I figured why not use my coding skills to build an application from it. I was curious what it would look like in a different format. This is the product of a habit I have built from it.
+In 2021, I read a book called **Atomic Habits**, by James Clear. It influenced me in my decision to start reading more. So I did. I kept my reviews for the various books I have read in a Google document. I figured why not use my coding skills to build an application from it. I was curious what it would look like in a different format. This is the product of a habit I have built from it.
 
 ## Features
 
@@ -53,7 +51,7 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 MIT License
 
-Copyright (c) [Year] [Your Name]
+Copyright (c) 2024 Josiah Mbao
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
