@@ -23,4 +23,32 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+        /**
+     * Automatically handle dynamic updates when a Post is created or deleted.
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        // Increment books finished when a new finished post is created
+        static::created(function ($post) {
+            if ($post->published_at) {
+                $user = $post->user;
+                if ($user) {
+                    $user->increment('books_finished');
+                }
+            }
+        });
+
+        // Decrement books finished when a finished post is deleted
+        static::deleted(function ($post) {
+            if ($post->published_at) {
+                $user = $post->user;
+                if ($user) {
+                    $user->decrement('books_finished');
+                }
+            }
+        });
+    }
 }

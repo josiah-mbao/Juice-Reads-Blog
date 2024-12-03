@@ -16,13 +16,13 @@ class DashboardController extends Controller
             return redirect()->route('login')->withErrors('You must be logged in to view the dashboard.');
         }
 
-        // Fetch the user's posts from the database
-        $currentlyReading = Post::where('user_id', $user->id)->whereNull('published_at')->get(); // Posts that are not published yet
+        // Fetch the user's posts
+        $currentlyReading = Post::where('user_id', $user->id)->whereNull('published_at')->get(); // Unpublished posts
         $finishedBooks = Post::where('user_id', $user->id)->whereNotNull('published_at')->get(); // Published posts
 
-        // Example reading goal and books finished (you can replace with actual logic if needed)
-        $readingGoal = 10; // User's reading goal
-        $booksFinished = $finishedBooks->count(); // Number of books they've finished
+        // User's reading goal and finished books count
+        $readingGoal = 10; // Replace with dynamic data if stored in the user profile
+        $booksFinished = $finishedBooks->count(); 
         $progress = ($booksFinished / $readingGoal) * 100; // Progress percentage
         
         return view('dashboard', compact('currentlyReading', 'finishedBooks', 'readingGoal', 'booksFinished', 'progress'));
