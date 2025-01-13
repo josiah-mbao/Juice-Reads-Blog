@@ -18,17 +18,17 @@
         @csrf
         <div class="mb-4">
             <label for="title" class="block text-sm font-medium text-gray-700">Book Title</label>
-            <input type="text" name="title" id="title" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500" required>
+            <input type="text" name="title" id="title" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-700" required>
         </div>
 
         <div class="mb-4">
             <label for="duration" class="block text-sm font-medium text-gray-700">Duration (e.g., Jan 1 - Jan 13)</label>
-            <input type="text" name="duration" id="duration" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500" required>
+            <input type="text" name="duration" id="duration" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-700" required>
         </div>
 
         <div class="mb-4">
             <label for="review_text" class="block text-sm font-medium text-gray-700">Review</label>
-            <textarea name="content" id="review_text" rows="5" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500" required></textarea>
+            <textarea name="content" id="review_text" rows="5" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-gray-700" required></textarea>
         </div>
 
         <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-indigo-500">Create Review</button>
