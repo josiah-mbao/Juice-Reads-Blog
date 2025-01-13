@@ -28,24 +28,37 @@ jobs:
       - name: Install Composer dependencies
         run: composer install --no-progress --no-suggest
 
-      # Step 4: Set up environment
+      # Step 4: Install Node.js and npm dependencies
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # Specify the Node.js version you're using for Vite
+
+      - name: Install npm dependencies
+        run: npm install
+
+      # Step 5: Build assets with Vite
+      - name: Build assets with Vite
+        run: npm run build
+
+      # Step 6: Set up environment
       - name: Copy .env file
         run: cp .env.example .env
 
-      # Step 5: Generate application key
+      # Step 7: Generate application key
       - name: Generate app key
         run: php artisan key:generate
 
-      # Step 6: Set up SQLite database
+      # Step 8: Set up SQLite database
       - name: Set up SQLite database
         run: |
           mkdir -p database
           touch database/database.sqlite
 
-      # Step 7: Run migrations
+      # Step 9: Run migrations
       - name: Run migrations
         run: php artisan migrate --env=testing
 
-      # Step 8: Run Laravel tests
+      # Step 10: Run Laravel tests
       - name: Run tests
         run: php artisan test
