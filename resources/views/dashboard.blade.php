@@ -24,7 +24,7 @@
                     <li class="flex justify-between items-center p-4 bg-gray-100 rounded-lg shadow-sm">
                         <div class="flex-1">
                             <strong class="text-gray-800">{{ $book->title }}</strong><br>
-                            <span class="text-gray-500">Duration: {{ $book->duration }} days</span><br>
+                            <span class="text-gray-500">Date: {{ $book->duration }}</span><br>
                             <p class="text-gray-600">{{ Str::limit($book->content, 100) }}</p>
                         </div>
                         <div class="flex space-x-2">
