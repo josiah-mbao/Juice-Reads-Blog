@@ -2,26 +2,38 @@
 
 @section('content')
 <div class="container mx-auto py-6">
-    <h1 class="text-3xl font-bold mb-4">User Profile</h1>
-    
-    <div class="bg-white shadow-md rounded-lg p-6">
-        <h2 class="text-xl font-semibold mb-4">Profile Information</h2>
-        <div class="mb-4">
-            <label class="block text-gray-700">Name</label>
-            <input type="text" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" value="{{ auth()->user()->name }}" readonly>
+    <h1 class="text-4xl font-bold text-center text-white-800 mb-6">User Profile</h1>
+
+    <div class="max-w-lg mx-auto bg-white shadow-lg rounded-lg p-6">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-6 border-b pb-2">Profile Information</h2>
+        <div class="mb-5">
+            <label class="block text-gray-600 font-medium mb-1">Name</label>
+            <input 
+                type="text" 
+                class="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 text-gray-800 bg-gray-50" 
+                value="{{ auth()->user()->name }}" 
+                readonly>
         </div>
-        <div class="mb-4">
-            <label class="block text-gray-700">Email</label>
-            <input type="email" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-200" value="{{ auth()->user()->email }}" readonly>
+        <div class="mb-5">
+            <label class="block text-gray-600 font-medium mb-1">Email</label>
+            <input 
+                type="email" 
+                class="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 text-gray-800 bg-gray-50" 
+                value="{{ auth()->user()->email }}" 
+                readonly>
         </div>
 
-        <a href="{{ route('profile') }}" class="text-blue-500 hover:underline">Edit Profile</a>
-
-        <div class="mt-6">
-            <!-- Logout Form -->
+        <div class="flex justify-between items-center mt-6">
+            <a href="{{ route('profile') }}" 
+               class="text-indigo-600 font-medium hover:underline hover:text-indigo-800 transition">
+               Edit Profile
+            </a>
             <form action="{{ route('logout') }}" method="POST">
                 @csrf
-                <button type="submit" class="text-gray-600 hover:text-indigo-600">Sign out</button>
+                <button type="submit" 
+                        class="text-gray-600 font-medium hover:text-red-600 transition">
+                        Sign out
+                </button>
             </form>
         </div>
     </div>
