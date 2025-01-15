@@ -1,0 +1,16 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www/html
+      - ./public/build:/var/www/html/public/build
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - APP_KEY=base64:73pNjVTLUvA+urYHyRRdBkUKR7orpsDHHeFq6G0r5Ok=
+      - DB_CONNECTION=/var/www/html/database/database.sqlite
+
